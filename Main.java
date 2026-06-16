@@ -4,7 +4,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String token = System.getenv("BOT_TOKEN");
 
         if (token == null || token.isEmpty()) {
@@ -17,6 +17,10 @@ public class Main {
                 .setActivity(Activity.playing("Giving Premium roles"))
                 .build();
 
-        System.out.println("Premium Role Bot is online!");
+        jda.awaitReady();
+        System.out.println("Premium Role Bot is online and ready!");
+
+        // Keep the bot alive
+        Thread.currentThread().join();
     }
 }
