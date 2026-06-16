@@ -1,3 +1,5 @@
+package com.legionai;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -18,9 +20,8 @@ public class Main {
                 .build();
 
         jda.awaitReady();
-        System.out.println("Premium Role Bot is online and ready!");
+        System.out.println("Premium Role Bot is online!");
 
-        // Keep the bot alive
         Thread.currentThread().join();
     }
 }
